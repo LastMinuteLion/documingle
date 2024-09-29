@@ -5,8 +5,7 @@ import {LiveblocksProvider , ClientSideSuspense } from '@liveblocks/react/suspen
 import { useUser } from '@clerk/nextjs';
 import {ReactNode} from 'react'
 import Loader from '@/components/Loader'
-import { getDocument } from '@/lib/actions/room.actions'
-import { currentUser } from '@clerk/nextjs/server'
+
 
 
 
