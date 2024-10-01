@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Documingle
 
-## Getting Started
+Documingle is a collaborative documentation platform designed to facilitate seamless collaboration and documentation. It leverages modern web technologies and services to provide a rich, real-time editing experience. The application is deployed on Vercel and can be accessed at [https://documingle.vercel.app/](https://documingle.vercel.app/).
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Real-time Collaboration**: Multiple users can edit documents simultaneously with real-time updates.
+- **User Authentication**: Secure user authentication and management using Clerk.
+- **Document Management**: Create, update, and delete documents with ease.
+- **User Roles**: Different user roles (creator, editor, viewer) with specific permissions.
+- **Notifications**: Real-time notifications for document access and updates.
+- **Comments and Threads**: Add comments and manage threads within documents.
+- **Dark Theme**: A visually appealing dark theme for better user experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Core Components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Provider**: Sets up the context for Liveblocks and Clerk.
+- **CollaborativeRoom**: Main component for collaborative document editing.
+- **Editor**: Rich text editor with plugins for toolbar, comments, and more.
+- **Comments**: Component to display and manage comments.
+- **Header**: Header component with navigation and user actions.
+- **Loader**: Loading spinner component.
+- **AddDocumentBtn**: Button to create a new document.
+- **ActiveCollaborators**: Displays active collaborators in a document.
 
-## Learn More
+### Plugins
 
-To learn more about Next.js, take a look at the following resources:
+- **FloatingToolbarPlugin**: Floating toolbar for text formatting.
+- **ToolbarPlugin**: Main toolbar for the editor.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Utility Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Input**: Custom input component.
+- **DeleteModal**: Modal for deleting documents.
 
-## Deploy on Vercel
+## Dependencies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **React**: JavaScript library for building user interfaces.
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **Clerk**: User management and authentication.
+- **Liveblocks**: Real-time collaboration infrastructure.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **Lexical**: Rich text editor framework.
+- **Sentry**: Error tracking and performance monitoring.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Usage
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/documingle.git
+   cd documingle
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory and add the following variables:
+   ```env
+   NEXT_PUBLIC_CLERK_FRONTEND_API=<your-clerk-frontend-api>
+   CLERK_API_KEY=<your-clerk-api-key>
+   LIVEBLOCKS_SECRET_KEY=<your-liveblocks-secret-key>
+   ```
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:3000`.
+
+### Authentication
+
+- Sign up or sign in using Clerk's authentication forms.
+- Once authenticated, you can create, edit, and manage documents.
+
+### Document Management
+
+- **Create Document**: Click on the "Start a blank document" button to create a new document.
+- **Edit Document**: Click on a document from the list to open and edit it.
+- **Delete Document**: Use the delete button in the document list or within the document view to delete a document.
+
+
+## Contribution
+
+I welcome contributions to improve Documingle. To contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Add your commit message"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Open a pull request on GitHub.
+
+
+## Acknowledgements
+
+- [Clerk](https://clerk.dev) for user authentication and management.
+- [Liveblocks](https://liveblocks.io) for real-time collaboration infrastructure.
+- [Next.js](https://nextjs.org) for the React framework.
+- [Tailwind CSS](https://tailwindcss.com) for the utility-first CSS framework.
+- [Lexical](https://lexical.dev) for the rich text editor framework.
+- [Sentry](https://sentry.io) for error tracking and performance monitoring.
+
+## Contact
+
+For any questions or feedback, please open an issue on GitHub
+---
+
+Thank you for using Documingle! We hope it enhances your collaborative documentation experience.
